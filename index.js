@@ -154,7 +154,7 @@ function math_block(state, start, end, silent){
     return true;
 }
 
-function markdownit_katex(md, options) {
+global.markdownit_katex = module.exports = function markdownit_katex(md, options) {
     // Default options
     options = options || {};
 
@@ -196,5 +196,3 @@ function markdownit_katex(md, options) {
     md.renderer.rules.math_inline = inlineRenderer;
     md.renderer.rules.math_block = blockRenderer;
 }
-
-global.markdownit_katex = module.exports = markdownit_katex;
